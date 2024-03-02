@@ -7,7 +7,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-# Configuração da conexão com o banco de dados
+# Configuração da conexão com o banco de dadoss
 conn = psycopg2.connect(
     dbname="grgrqypi",
     user="grgrqypi",
