@@ -9,7 +9,7 @@ def check_auth(username, password):
 
 @app.route('/')
 def secret_page():
-    auth = request.authorization
+    auth = request.authorization # Ja faz decodifica a base 64 e transforma de bytes em string
     if not auth or not check_auth(auth.username, auth.password):
         return Response('Você precisa se autenticar.', 401, {'WWW-Authenticate': 'Basic realm="Login Required"'})
     

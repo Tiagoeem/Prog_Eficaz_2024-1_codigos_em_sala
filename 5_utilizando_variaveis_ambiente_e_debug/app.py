@@ -34,7 +34,6 @@ def post_user():
     data = request.json
 
     breakpoint()
-
     if "cpf" not in data:
         return {"erro": "cpf é obrigatório"}, 400
     
@@ -44,7 +43,7 @@ def post_user():
 
     
 
-# Desafios feitos em sala, espewro que vocÊ tenha feito :)
+# Desafios feitos em sala, espero que você tenha feito :)
 
 
 

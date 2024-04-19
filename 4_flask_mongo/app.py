@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_pymongo import PyMongo
 
 
@@ -21,7 +21,21 @@ def get_all_users():
 
     return resp, 200
 
+
+
+@app.route('/usuarios', methods=['POST'])
+def post_user():
     
+    data = request.json
+
+    breakpoint()
+
+    if "cpf" not in data:
+        return {"erro": "cpf é obrigatório"}, 400
+    
+    result = mongo.db.usuarios_col.insert_one(data)
+
+    return {"id": str(result.inserted_id)}, 201
 
 # Desafios feitos em sala, espewro que vocÊ tenha feito :)
 
